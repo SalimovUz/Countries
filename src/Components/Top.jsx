@@ -19,7 +19,7 @@ const Top = () => {
           : "bg-[#283949] w-full fixed top-0 px-12 md:px-20 py-4 z-44 border-b-gray-200 shadow-bottom-10px items-center text-white"
       }`}
     >
-      <div className="top md:pb-12 md:pt-2  justify-between flex mx-auto container  items-center">
+      <div className="top md:pb-[9px] md:pt-2  justify-between flex mx-auto container  items-center">
         <div className="left">
           <h1 className="md:text-2xl text-sm sm:text-lg font-semibold font-[Nunito Sans]">
             Where in the world?
@@ -37,7 +37,7 @@ const Top = () => {
           ) : (
             <MdOutlineLightMode onClick={handleToggle} />
           )}
-          <button className={`font-semibold`} onClick={handleToggle}>
+          <button className={`font-semibold text-sm sm:text-md md:text-lg lg:text-xl`} onClick={handleToggle}>
             {`
              ${darkMode ? "Dark Mode" : "Light Mode"}`}
           </button>

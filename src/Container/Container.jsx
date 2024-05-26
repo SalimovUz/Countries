@@ -23,7 +23,7 @@ const Container = () => {
       }`}
     >
       <div
-        className={`duration-500 z-10 
+        className={`duration-500 z-10
       ${
         darkMode
           ? " bg-[#FAFAFA] text-[#041A24] z-10"

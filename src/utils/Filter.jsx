@@ -18,8 +18,8 @@ const Filter = ({ setSearchValue, setRegion }) => {
       className={`duration-500 
       ${
         darkMode
-          ? " bg-[#FAFAFA] text-[#041A24] fixed w-full px-12 md:px-20  md:top-20 top-12 py-4 container mx-auto "
-          : " bg-[#202C37] text-white fixed w-full px-12 md:px-20  md:top-20 top-12 py-4 container mx-auto "
+          ? " bg-[#FAFAFA] text-[#041A24] fixed w-full px-12 md:px-20  md:top-20 top-12 sm:top-[59px] py-4 container mx-auto "
+          : " bg-[#202C37] text-white fixed w-full px-12 md:px-20  md:top-20 top-12 sm:top-[59px] py-4 container mx-auto "
       }`}
     >
       <form
