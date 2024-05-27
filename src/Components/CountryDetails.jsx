@@ -84,7 +84,7 @@ const CountryDetails = () => {
             {/* Country details in text */}
             <div className="country-details flex flex-col gap-10">
               <h2 className="text-4xl font-semibold">{countryName.common}</h2>
-              <div className="flex  gap-16">
+              <div className="flex-col md:flex-row  gap-16">
                 <div className="left">
                   <h5>
                     Native Name:{" "}
@@ -104,7 +104,7 @@ const CountryDetails = () => {
                   </h5>
                 </div>
 
-                <div className="right">
+                <div className="right mt-12 md:mt-0">
                   <h5>
                     Top Level Domain: <span>{tld ? tld[0] : "N/A"}</span>
                   </h5>
