@@ -123,7 +123,7 @@ const CountryDetails = () => {
                 </div>
               </div>
               <div className="flex-col md:flex-row md:flex items-center gap-4">
-                <h3 className="text-2xl font-semibold">Border Countries: </h3>
+                <h3 className="text-lg md:text-2xl font-semibold">Border Countries: </h3>
                 <div className="borders flex gap-4">
                   {borders ? (
                     borders.map((border) => (
