@@ -83,40 +83,40 @@ const CountryDetails = () => {
 
             {/* Country details in text */}
             <div className="country-details flex flex-col gap-10">
-              <h2 className="text-2xl md:text-4xl font-semibold">{countryName.common}</h2>
-              <div className="flex-col md:flex-row  gap-16">
+              <h2 className="text-2xl md:text-5xl font-semibold">{countryName.common}</h2>
+              <div className="flex-col md:flex-row md:flex  gap-16">
                 <div className="left">
-                  <h5 className="text-md md:text-xl">
+                  <h5 className="text-lg md:text-2xl">
                     Native Name:{" "}
-                    <span className="text-sm md:text:lg">{nativeName ? nativeName[0] : "N/A"}</span>
+                    <span className="text-md md:text-xl">{nativeName ? nativeName[0] : "N/A"}</span>
                   </h5>
-                  <h5 className="text-md md:text-xl">
-                    Population: <span className="text-sm md:text:lg">{population.toLocaleString()}</span>
+                  <h5 className="text-lg md:text-2xl">
+                    Population: <span className="text-md md:text-xl">{population.toLocaleString()}</span>
                   </h5>
-                  <h5 className="text-md md:text-xl">
-                    Region: <span className="text-sm md:text:lg">{region}</span>
+                  <h5 className="text-lg md:text-2xl">
+                    Region: <span className="text-md md:text-xl">{region}</span>
                   </h5>
-                  <h5 className="text-md md:text-xl">
-                    Sub Region: <span className="text-sm md:text:lg">{subregion}</span>
+                  <h5 className="text-lg md:text-2xl">
+                    Sub Region: <span className="text-md md:text-xl">{subregion}</span>
                   </h5>
-                  <h5 className="text-md md:text-xl">
-                    Capital: <span className="text-sm md:text:lg">{capital}</span>
+                  <h5 className="text-lg md:text-2xl">
+                    Capital: <span className="text-md md:text-xl">{capital}</span>
                   </h5>
                 </div>
 
                 <div className="right mt-12 md:mt-0">
-                  <h5 className="text-md md:text-xl">
-                    Top Level Domain: <span className="text-sm md:text:lg">{tld ? tld[0] : "N/A"}</span>
+                  <h5 className="text-lg md:text-2xl">
+                    Top Level Domain: <span className="text-md md:text-xl">{tld ? tld[0] : "N/A"}</span>
                   </h5>
-                  <h5 className="text-md md:text-xl">
+                  <h5 className="text-lg md:text-2xl">
                     Currencies:{" "}
-                    <span className="text-sm md:text:lg">
+                    <span className="text-md md:text-xl">
                       {currencies ? Object.values(currencies)[0].name : "N/A"}
                     </span>
                   </h5>
-                  <h5 className="text-md md:text-xl">
+                  <h5 className="text-lg md:text-2xl">
                     Languages:{" "}
-                    <span className="text-sm md:text:lg">
+                    <span className="text-md md:text-xl">
                       {languages ? Object.values(languages).join(", ") : "N/A"}
                     </span>
                   </h5>
