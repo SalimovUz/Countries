@@ -122,13 +122,13 @@ const CountryDetails = () => {
                   </h5>
                 </div>
               </div>
-              <div className="flex-col md:flex-row items-center gap-4">
+              <div className="flex-col md:flex-row md:flex items-center gap-4">
                 <h3 className="text-2xl font-semibold">Border Countries: </h3>
                 <div className="borders flex gap-4">
                   {borders ? (
                     borders.map((border) => (
                       <ul key={border}>
-                        <li className="border px-4 py-1 rounded-md hover:bg-blue-950 hover:text-white transition-all duration-500 cursor-pointer">{border}</li>
+                        <li className="border px-4 py-1 rounded-md hover:bg-blue-950 hover:text-white transition-all duration-500 cursor-pointer flex-wrap">{border}</li>
                       </ul>
                     ))
                   ) : (
