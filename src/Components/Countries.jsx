@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "../constants/baseUrl";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
+const BASE_URL = "https://restcountries.com/v3.1/all";
 
 const Countries = ({ searchValue, region }) => {
   const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
   const darkMode = useSelector((state) => state.mode.darkMode);
 
   useEffect(() => {
-    axios.get(`${BASE_URL}`).then((response) => {
-      setData(response.data);
-    });
+    axios
+      .get(`${BASE_URL}`)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((err) => {
+        setError(err.message);
+        console.error("Error fetching data:", err);
+      });
   }, []);
 
   const filteredCountries = data.filter((country) => {
@@ -21,24 +30,29 @@ const Countries = ({ searchValue, region }) => {
     return matchesSearch && matchesRegion;
   });
 
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="w-full">
       <div className="countries mt-32 md:mt-16 z-1">
         <div className="grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 grid-cols-1 gap-10 sm:gap-12 md:gap-16 lg:gap-20">
           {filteredCountries.map((country) => (
-            <div
+            <Link
+              to={`/country/${country.name.common}`}
+              key={country.name.common}
               className={`duration-500 ${
                 darkMode
-                  ? "shadow-md rounded-t-lg rounded-md cursor-pointer shadow-custom-gray hover:scale-110 transition-all duration-300 hover:z-1"
-                  : "shadow-md rounded-t-lg rounded-md cursor-pointer shadow-lg bg-[#283949] hover:scale-110 transition-all duration-300 hover:z-1"
+                  ? "shadow-md rounded-t-lg rounded-md cursor-pointer shadow-custom-gray md:hover:scale-110 transition-all duration-300 hover:z-1"
+                  : "shadow-md rounded-t-lg rounded-md cursor-pointer shadow-lg bg-[#283949] md:hover:scale-110 transition-all duration-300 hover:z-1"
               }`}
-              key={country.name.common}
             >
               <div className="justify-between flex flex-col pb-4 h-full">
                 <img
                   className="rounded-t-lg h-[50%]"
                   src={country.flags.png}
-                  alt=""
+                  alt={country.name.common}
                 />
                 <div className="content px-6 mt-[-30px] items-start">
                   <h3 className="country-name text-lg font-semibold">
@@ -64,7 +78,7 @@ const Countries = ({ searchValue, region }) => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

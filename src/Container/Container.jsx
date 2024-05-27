@@ -3,7 +3,6 @@ import Top from "../Components/Top";
 import Countries from "../Components/Countries";
 import { useSelector, useDispatch } from "react-redux";
 import Filter from "../utils/Filter";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Container = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -14,6 +13,13 @@ const Container = () => {
   if (darkMode) {
     body[0].classList.add("bg-[#FAFAFA]");
     body[0].classList.add("text-[#041A24]");
+    body[0].classList.remove("bg-[#202C37]");
+    body[0].classList.remove("text-[#041A24]");
+  } else {
+    body[0].classList.add("bg-[#202C37]");
+    body[0].classList.add("text-white");
+    body[0].classList.remove("bg-[#FAFAFA]");
+    body[0].classList.remove("text-[#041A24]");
   }
   return (
     <div
