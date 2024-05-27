@@ -4,7 +4,7 @@ import Top from "./Top";
 import { GoArrowLeft } from "react-icons/go";
 import { useSelector } from "react-redux";
 
-import "../Country.css"
+// import "../Country.css"
 
 const CountryDetails = () => {
   const [country, setCountry] = useState(null);
@@ -63,7 +63,7 @@ const CountryDetails = () => {
       <div>
         <Top />
       </div>
-      <section className="country pt-28 pb-8 container mx-auto px-20 w-full h-screen">
+      <section className="country pt-20 md:pt-28 pb-8 container mx-auto px-12 md:px-20 w-full h-screen">
         <Link
           to="/"
           className="gap-2 inline-flex items-center border px-5 py-2 rounded-md hover:bg-blue-950 hover:text-white transition-all duration-500"
@@ -75,7 +75,7 @@ const CountryDetails = () => {
           <div className="country-inner flex-col md:flex md:flex-row justify-between items-center md:mt-16">
             <div className="flag">
               <img
-                className="w-[600px] h-[400px] country__img object-contain"
+                className="w-[600px] h-[300px] md:h-[400px] country__img object-contain"
                 src={flags.png}
                 alt={countryName.common}
               />
@@ -83,40 +83,40 @@ const CountryDetails = () => {
 
             {/* Country details in text */}
             <div className="country-details flex flex-col gap-10">
-              <h2 className="text-4xl font-semibold">{countryName.common}</h2>
+              <h2 className="text-2xl md:text-4xl font-semibold">{countryName.common}</h2>
               <div className="flex-col md:flex-row  gap-16">
                 <div className="left">
-                  <h5>
+                  <h5 className="text-md md:text-xl">
                     Native Name:{" "}
-                    <span>{nativeName ? nativeName[0] : "N/A"}</span>
+                    <span className="text-sm md:text:lg">{nativeName ? nativeName[0] : "N/A"}</span>
                   </h5>
-                  <h5>
-                    Population: <span>{population.toLocaleString()}</span>
+                  <h5 className="text-md md:text-xl">
+                    Population: <span className="text-sm md:text:lg">{population.toLocaleString()}</span>
                   </h5>
-                  <h5>
-                    Region: <span>{region}</span>
+                  <h5 className="text-md md:text-xl">
+                    Region: <span className="text-sm md:text:lg">{region}</span>
                   </h5>
-                  <h5>
-                    Sub Region: <span>{subregion}</span>
+                  <h5 className="text-md md:text-xl">
+                    Sub Region: <span className="text-sm md:text:lg">{subregion}</span>
                   </h5>
-                  <h5>
-                    Capital: <span>{capital}</span>
+                  <h5 className="text-md md:text-xl">
+                    Capital: <span className="text-sm md:text:lg">{capital}</span>
                   </h5>
                 </div>
 
                 <div className="right mt-12 md:mt-0">
-                  <h5>
-                    Top Level Domain: <span>{tld ? tld[0] : "N/A"}</span>
+                  <h5 className="text-md md:text-xl">
+                    Top Level Domain: <span className="text-sm md:text:lg">{tld ? tld[0] : "N/A"}</span>
                   </h5>
-                  <h5>
+                  <h5 className="text-md md:text-xl">
                     Currencies:{" "}
-                    <span>
+                    <span className="text-sm md:text:lg">
                       {currencies ? Object.values(currencies)[0].name : "N/A"}
                     </span>
                   </h5>
-                  <h5>
+                  <h5 className="text-md md:text-xl">
                     Languages:{" "}
-                    <span>
+                    <span className="text-sm md:text:lg">
                       {languages ? Object.values(languages).join(", ") : "N/A"}
                     </span>
                   </h5>
